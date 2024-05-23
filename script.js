@@ -1,14 +1,30 @@
 const calculatorScreen = document.getElementById("calculator-screen");
 const clearButton = document.getElementById("clear-btn");
+const equalsButton = document.getElementById("equals-btn");
+const dotButton = document.getElementById("dot-btn");
 const numberButtons = document.querySelectorAll(".btn-number");
 const operatorButtons = document.querySelectorAll(".btn-operator");
 
+
+clearButton.addEventListener("click", clearScreen);
+numberButtons.forEach(button => {
+  button.addEventListener("click", () => appendNumber(button.textContent))
+})
+
+
 function clearScreen() {
-  clearButton.addEventListener("click", () => {
-    calculatorScreen.textContent = "";
-  })
+  calculatorScreen.textContent = "0";
 }
 
+function appendNumber(number) {
+  if (calculatorScreen.textContent === "0") {
+    calculatorScreen.textContent = number;
+  } else {
+    calculatorScreen.textContent += number;
+  }
+}
+
+//Operate function to calculate equation
 let x;
 let operator;
 let y;
