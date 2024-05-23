@@ -1,3 +1,14 @@
+const calculatorScreen = document.getElementById("calculator-screen");
+const clearButton = document.getElementById("clear-btn");
+const numberButtons = document.querySelectorAll(".btn-number");
+const operatorButtons = document.querySelectorAll(".btn-operator");
+
+function clearScreen() {
+  clearButton.addEventListener("click", () => {
+    calculatorScreen.textContent = "";
+  })
+}
+
 let x;
 let operator;
 let y;
@@ -33,4 +44,3 @@ function division(x, y) {
   return x / y;
 }
 
-console.log(operate("+", 5, 6));
