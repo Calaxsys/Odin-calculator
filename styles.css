@@ -34,9 +34,14 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: rgb(139, 139, 139);
+}
+
 .buttons-display {
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     max-width: 400px;
+    border: 2px solid black;
 }
